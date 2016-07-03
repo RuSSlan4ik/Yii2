@@ -16,11 +16,6 @@ use Yii;
 class Goods extends \yii\db\ActiveRecord
 {
     /**
-     * Validate const
-     */
-    const NAME_AND_EMAIL_MAX_LENGTH = 255;
-
-    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -37,7 +32,7 @@ class Goods extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['count'], 'integer'],
             [['create_date'], 'safe'],
-            [['name', 'email_provider'], 'string', 'max' => self::NAME_AND_EMAIL_MAX_LENGTH]
+            [['name', 'email_provider'], 'string', 'max' => 255],
         ];
     }
 
